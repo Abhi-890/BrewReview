@@ -16,7 +16,6 @@ const BreweryInfo = ({ params }) => {
     return `${value}`;
   }
   const calculateAverageRating = (reviews) => {
-    console.log(reviews);
     if (!reviews || reviews.length === 0) {
       return null;
     }
@@ -47,7 +46,6 @@ const BreweryInfo = ({ params }) => {
       })
       .then((response) => {
         setReviews(response.data);
-        console.log();
         const filteredReviews = response.data.data.filter(
           (review) => review.brewery === id
         );

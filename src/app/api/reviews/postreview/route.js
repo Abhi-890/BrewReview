@@ -8,7 +8,6 @@ connectToDB();
 
 export async function POST(request) {
   try {
-    console.log(request);
     const reqBody = await request.json();
     const temp = await getDataFromToken(request);
     const { brewery, rating, description } = reqBody;
@@ -20,7 +19,6 @@ export async function POST(request) {
       description,
     });
     const savedReview = await newReview.save();
-    console.log(savedReview);
 
     return NextResponse.json({
       message: "review Created Successfully",

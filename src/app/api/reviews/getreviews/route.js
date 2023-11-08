@@ -7,8 +7,6 @@ connectToDB();
 
 export async function GET(request) {
   try {
-    console.log(request);
-
     const reviews = await Review.find();
 
     return NextResponse.json({
